@@ -2,12 +2,12 @@ import Image from "next/image";
 import { ConnectButton } from '@rainbow-me/rainbowkit';
 import Markdown from 'react-markdown'
 
-import { Amplify } from 'aws-amplify';
+import { Amplify, ResourcesConfig } from 'aws-amplify';
 import config from '../../aws-exports';
 import { generateClient } from 'aws-amplify/api';
 import { hello } from "@/graphql/queries";
 
-Amplify.configure(config as any);
+Amplify.configure(config as ResourcesConfig);
 const client = generateClient();
 
 export default async function Home() {
